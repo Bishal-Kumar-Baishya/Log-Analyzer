@@ -24,15 +24,15 @@ def parsing(filepath):
         sys.exit()
 
 
-def threshold(users, ips):
+def threshold(users, ips, thd):
     msg_ip = []
     msg_user = []
     for user in users:
-        if users[user] > 5:
+        if users[user] > thd:
             msg_user.append(f"Suspicious! User {user} : {users[user]} attempts")
 
     for ip in ips:
-        if ips[ip] > 5:
+        if ips[ip] > thd:
             msg_ip.append(f"Brute force attempted by {ip} : {ips[ip]} attempts")
 
     return msg_user, msg_ip
@@ -40,11 +40,11 @@ def threshold(users, ips):
 def main():
     parser.add_argument("filepath")
     parser.add_argument("--output", default="terminal")
+    parser.add_argument("--threshold", type=int, default=5) 
     args = parser.parse_args()
     users, ips = parsing(args.filepath)
 
-
-    res1, res2 = threshold(users, ips)
+    res1, res2 = threshold(users, ips, args.threshold)
 
     if args.output == "terminal":
         for result in res1:
