@@ -13,6 +13,7 @@ python log_analyzer.py auth.log --output file --threshold `<your value>`
 
 ## About the tool
 This tool reads auth log file and looks for suspicious and multiple failed attempts from same user or IP address. It flags the failed attempts and shows in terminal with user names and IP address, or writes it in a file.
+Added time, when first suspicious attempts occured.
 
 
 ## Built with

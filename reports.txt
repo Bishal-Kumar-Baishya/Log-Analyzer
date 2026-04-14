@@ -1,3 +1,3 @@
-Suspicious! User root : 7 attempts
-Suspicious! User admin : 7 attempts
-Brute force attempted by 192.168.1.10 : 14 attempts
+Suspicious! User root : 7 attempts | First seen: Nov 12 06:25:43
+Suspicious! User admin : 7 attempts | First seen: Nov 12 06:25:45
+Brute force attempted by 192.168.1.10 : 14 attempts | First seen: Nov 12 06:25:43
